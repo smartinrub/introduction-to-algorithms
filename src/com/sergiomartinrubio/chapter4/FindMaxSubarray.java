@@ -1,4 +1,4 @@
-package com.sergiomartinrubio.chapter2;
+package com.sergiomartinrubio.chapter4;
 
 import java.util.Arrays;
 
