@@ -1,10 +1,22 @@
 package com.sergiomartinrubio.chapter6;
 
+import java.util.Arrays;
+
 public class Heapsort {
 
     public void sort(int[] A) {
-        int n = A.length - 1;
-        for (int i = 0; i < n / 2; i++) {
+        buildMaxHeap(A);
+        for (int i = A.length - 1; i > 1; i--) {
+            int temp = A[1];
+            A[1] = A[i];
+            A[i] = temp;
+            A = Arrays.copyOfRange(A, 0, A.length - 1);
+            maxHeap(A, 0);
+        }
+    }
+
+    private void buildMaxHeap(int[] A) {
+        for (int i = A.length / 2 - 1; i >= 0; i--) {
             maxHeap(A, i);
         }
     }
