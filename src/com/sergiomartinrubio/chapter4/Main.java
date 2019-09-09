@@ -1,6 +1,5 @@
 package com.sergiomartinrubio.chapter4;
 
-import java.io.Console;
 import java.util.Arrays;
 
 public class Main {

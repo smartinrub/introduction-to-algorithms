@@ -1,5 +1,6 @@
 package com.sergiomartinrubio.chapter6;
 
+// Time Complexity = O(n log(n))
 public class Heapsort {
 
     public void sort(int[] A) {
@@ -12,6 +13,7 @@ public class Heapsort {
         }
     }
 
+    // O(n)
     private void buildMaxHeap(int[] A) {
         int n = A.length;
         for (int i = n / 2 - 1; i >= 0; i--) {
@@ -19,6 +21,7 @@ public class Heapsort {
         }
     }
 
+    // O(log n)
     private void maxHeap(int[] A, int n, int i) {
         int l = i * 2 + 1;
         int r = i * 2 + 2;
