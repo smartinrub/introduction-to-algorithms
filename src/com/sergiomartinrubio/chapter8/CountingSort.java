@@ -9,9 +9,10 @@ package com.sergiomartinrubio.chapter8;
  */
 public class CountingSort {
 
-    public int[] sort(int[] A) {
+    public void sort(int[] A) {
         int max = findMax(A);
         int[] aux = new int[max + 1];
+        int[] output = new int[A.length];
         // O(n)
         for (int i = 0; i < A.length; i++) {
             aux[A[i]]++;
@@ -22,13 +23,14 @@ public class CountingSort {
             aux[i] = aux[i] + aux[i - 1];
         }
 
-        int[] output = new int[A.length];
         // O(m)
         for (int i = A.length - 1; i >= 0; i--) {
             output[aux[A[i]] - 1] = A[i];
             aux[A[i]] = aux[A[i]] - 1;
         }
-        return output;
+        for (int i = 0; i < A.length; i++) {
+            A[i] = output[i];
+        }
     }
 
     private int findMax(int[] A) {
