@@ -6,6 +6,8 @@ package com.sergiomartinrubio.chapter8;
  * value appear in the output array in the same order as they
  * do in the input array. This is important if it is used as
  * a subroutine of another algorithm like radix sort.
+ *
+ * It assumes a small that integers are ina a small range.
  */
 public class CountingSort {
 
