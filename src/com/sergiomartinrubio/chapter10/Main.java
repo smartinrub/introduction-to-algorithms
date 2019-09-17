@@ -13,5 +13,16 @@ public class Main {
         System.out.println(stack.pop());
         System.out.println(stack.pop());
         System.out.println(stack.pop());
+
+        Queue queue = new Queue();
+        queue.enqueue(3);
+        queue.enqueue(5);
+        queue.enqueue(9);
+        queue.enqueue(1);
+
+//        System.out.println(queue.dequeue());
+//        System.out.println(queue.dequeue());
+//        System.out.println(queue.dequeue());
+//        System.out.println(queue.dequeue());
     }
 }

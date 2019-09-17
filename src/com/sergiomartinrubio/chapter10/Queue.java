@@ -2,28 +2,30 @@ package com.sergiomartinrubio.chapter10;
 
 import java.util.Arrays;
 
-public class Stack<E> {
+public class Queue<E> {
 
     private E[] array;
     private int tailIndex = 0;
 
-    public Stack() {
+    public Queue() {
         array = (E[]) new Object[10];
     }
 
-    public void push(E e) {
+    public void enqueue(E e) {
         if (isFull()) {
             array = Arrays.copyOf(array, array.length * 2);
         }
         array[tailIndex++] = e;
     }
 
-    public E pop() {
+    public E dequeue() {
         if (isEmpty()) {
             return null;
         }
-        E e = array[tailIndex - 1];
-        array[tailIndex--] = null;
+        E e = array[0];
+        for (int i = 0; i < tailIndex; i++) {
+            array[i] = array[i + 1];
+        }
         return e;
     }
 
