@@ -12,6 +12,7 @@ public class Deque<E> {
         array = (E[]) new Object[10];
     }
 
+    // O(n)
     public void insertFront(E e) {
         if (isFull()) {
             array = Arrays.copyOf(array, array.length * 2);
@@ -28,6 +29,7 @@ public class Deque<E> {
         }
     }
 
+    // O(1)
     public void insertLast(E e) {
         if (isFull()) {
             array = Arrays.copyOf(array, array.length * 2);
@@ -35,6 +37,7 @@ public class Deque<E> {
         array[tail++] = e;
     }
 
+    // O(1)
     public E getFront() {
         if (isEmpty()) {
             return null;
@@ -42,6 +45,7 @@ public class Deque<E> {
         return array[head];
     }
 
+    // O(1)
     public E getRear() {
         if (isEmpty()) {
             return null;
@@ -52,6 +56,7 @@ public class Deque<E> {
         return array[tail - 1];
     }
 
+    // O(1)
     public void deleteFront() {
         if (isEmpty()) {
             return;
@@ -59,6 +64,7 @@ public class Deque<E> {
         head++;
     }
 
+    // O(1)
     public void deleteRear() {
         if (isEmpty()) {
             return;

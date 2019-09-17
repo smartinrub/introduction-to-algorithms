@@ -12,6 +12,7 @@ public class Queue<E> {
         array = (E[]) new Object[10];
     }
 
+    // O(1)
     public void enqueue(E e) {
         if (isFull()) {
             array = Arrays.copyOf(array, array.length * 2);
@@ -19,6 +20,7 @@ public class Queue<E> {
         array[tail++] = e;
     }
 
+    // O(1)
     public E dequeue() {
         if (isEmpty()) {
             return null;

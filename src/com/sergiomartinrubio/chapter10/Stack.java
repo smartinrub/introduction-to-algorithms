@@ -11,6 +11,7 @@ public class Stack<E> {
         array = (E[]) new Object[10];
     }
 
+    // O(1)
     public void push(E e) {
         if (isFull()) {
             array = Arrays.copyOf(array, array.length * 2);
@@ -18,6 +19,7 @@ public class Stack<E> {
         array[top++] = e;
     }
 
+    // O(1)
     public E pop() {
         if (isEmpty()) {
             return null;
