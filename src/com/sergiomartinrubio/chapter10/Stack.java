@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class Stack<E> {
 
     private E[] array;
-    private int tailIndex = 0;
+    private int top = 0;
 
     public Stack() {
         array = (E[]) new Object[10];
@@ -15,20 +15,20 @@ public class Stack<E> {
         if (isFull()) {
             array = Arrays.copyOf(array, array.length * 2);
         }
-        array[tailIndex++] = e;
+        array[top++] = e;
     }
 
     public E pop() {
         if (isEmpty()) {
             return null;
         }
-        E e = array[tailIndex - 1];
-        array[tailIndex--] = null;
+        E e = array[top - 1];
+        array[top--] = null;
         return e;
     }
 
     public boolean isFull() {
-        return array.length == tailIndex;
+        return array.length == top;
     }
 
     public boolean isEmpty() {

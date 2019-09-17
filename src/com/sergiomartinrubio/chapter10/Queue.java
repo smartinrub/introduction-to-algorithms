@@ -5,7 +5,8 @@ import java.util.Arrays;
 public class Queue<E> {
 
     private E[] array;
-    private int tailIndex = 0;
+    private int tail = 0;
+    private int head = 0;
 
     public Queue() {
         array = (E[]) new Object[10];
@@ -15,22 +16,18 @@ public class Queue<E> {
         if (isFull()) {
             array = Arrays.copyOf(array, array.length * 2);
         }
-        array[tailIndex++] = e;
+        array[tail++] = e;
     }
 
     public E dequeue() {
         if (isEmpty()) {
             return null;
         }
-        E e = array[0];
-        for (int i = 0; i < tailIndex; i++) {
-            array[i] = array[i + 1];
-        }
-        return e;
+        return array[head++];
     }
 
     public boolean isFull() {
-        return array.length == tailIndex;
+        return array.length == tail;
     }
 
     public boolean isEmpty() {

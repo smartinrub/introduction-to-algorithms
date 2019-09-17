@@ -20,9 +20,9 @@ public class Main {
         queue.enqueue(9);
         queue.enqueue(1);
 
-//        System.out.println(queue.dequeue());
-//        System.out.println(queue.dequeue());
-//        System.out.println(queue.dequeue());
-//        System.out.println(queue.dequeue());
+        System.out.println(queue.dequeue());
+        System.out.println(queue.dequeue());
+        System.out.println(queue.dequeue());
+        System.out.println(queue.dequeue());
     }
 }
