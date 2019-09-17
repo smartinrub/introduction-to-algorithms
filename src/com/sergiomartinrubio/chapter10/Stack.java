@@ -22,7 +22,9 @@ public class Stack<E> {
         if (isEmpty()) {
             return null;
         }
-        return array[tailIndex--];
+        E e = array[tailIndex];
+        array[tailIndex--] = null;
+        return e;
     }
 
     public boolean isFull() {
